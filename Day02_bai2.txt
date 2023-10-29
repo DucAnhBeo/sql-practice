@@ -1,0 +1,50 @@
+CREATE DATABASE quanlysinhvien;
+
+1/
+CREATE TABLE tbl_sinhvien(
+studentId int,
+name text,
+age int,
+gender text,
+classId text
+);
+
+2/
+CREATE TABLE tbl_giaovien(
+teacherId int,
+name text,
+age int,
+gender text,
+experienced int
+);
+
+3/
+CREATE TABLE tbl_diem(
+id int,
+studentId int,
+math int,
+physic int,
+chemistry int
+);
+
+4/
+INSERT INTO tbl_sinhvien(studentId, name, age, gender, classid)
+VALUES (1,'Nguyen Van A', 18, 'male', 'E22'),(2,'Nguyen Thi B',18, 'female', 'E22');
+
+INSERT INTO tbl_giaovien(teacherId, name, age, gender, experienced)
+VALUES(10,'Nguyen Huu A', 50, 'male', 20),(11, 'Nguyen Minh B', 45, 'female', 18);
+
+INSERT INTO tbl_diem(id, studentId, math, physic, chemistry)
+VALUES(100, 1, 8 , 9 , 10),(101, 2, 10, 9, 8);
+
+5/
+ALTER TABLE tbl_diem 
+ADD gpa int;
+
+ALTER TABLE tbl_diem
+DROP COLUMN id;
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE tbl_diem
+SET gpa = (math + physic + chemistry)/3
+WHERE studentId = 1;

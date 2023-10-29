@@ -1,0 +1,59 @@
+CREATE DATABASE product;
+
+1/
+CREATE TABLE Product (
+product_id int,
+product_name varchar(100),
+price double,
+quantity int 
+);
+
+2/
+INSERT INTO Product (product_id, product_name, price, quantity)
+VALUES (1, 'astrox100zz', 4500000, 100), (2, 'astrox99', 4200000, 90),(3, 'astrox88d', 4000000, 80),(4, 'astrox77', 3800000, 70),(5, 'astrox66', 3500000, 100), (6, 'astrox55', 3200000, 100), (7, 'astrox44', 3000000, 100), (8, 'astrox33', 2800000, 100), (9, 'astrox22', 2500000, 100), (10, 'astrox11', 2000000, 100);
+
+3/
+ALTER TABLE Product
+ADD description varchar(100);
+
+4/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Product
+SET price = 99
+WHERE product_id = 1;
+
+5/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Product
+SET price = price *110/100
+WHERE product_id = 2;
+
+6/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Person
+SET fullname = 'John Doe'
+WHERE id = 10;
+
+7/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Person
+SET country = 'Canada'
+WHERE id = 3;
+
+8/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Person
+SET birthday = '1990-05-15', country = 'Viet Nam'
+WHERE id = 7;
+
+9/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Person
+SET salary = salary * 110/100
+WHERE id = 40;
+
+10/
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Person
+SET salary = salary * 85/100
+WHERE salary > 6000;
